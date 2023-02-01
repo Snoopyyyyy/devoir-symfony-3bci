@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        <style>
+            body, html {
+                background: #151515;
+                color: white;
+                font-family: Arial, sans-serif;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+            }
+
+            h1, h2, h3, h4 {
+                margin: 0 0 1.2rem;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                gap: 18px;
+            }
+
+            form > div {
+                width: 100%;
+                display: flex;
+                gap: 8px;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            form > div > label {
+                padding-left: 10px;
+            }
+
+            form > div > input, form > div > select {
+                border-radius: 10px;
+                font-size: 16px;
+                width: 100%;
+                padding: 8px;
+            }
+
+            form > div > button[type="submit"] {
+                border-radius: 10px;
+                font-size: 16px;
+                width: 100%;
+                padding: 8px;
+                background: green;
+                color: white;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+            form > div > button[type="submit"]:hover {
+                 background: rgb(0,255,0);
+             }
+
+            form > div > textarea {
+                padding: 8px;
+                border-radius: 10px;
+                height: 100px;
+                font-size: 16px;
+                width: 100%;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 75%;
+            }
+
+            .card {
+                width: 100%;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+                transition: 0.3s;
+                border-radius: 5px;
+                background-color: #414141;
+                padding: 20px;
+            }
+
+            .multi-card {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .title {
+                margin: 20px;
+            }
+
+            .btn {
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.2s ease-out;
+            }
+
+            .btn:hover {
+                background-color: #3e8e41;
+            }
+        </style>
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+</html>

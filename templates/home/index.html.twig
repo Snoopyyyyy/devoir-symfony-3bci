@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Movies Series{% endblock %}
+
+{% block body %}
+    <div class="container multi-card">
+        <h1 class="title">Lists des film / series </h1>
+        {% if movies_series|length %}
+            {% for movie in movies_series %}
+            <div class="card">
+               <h2>{{ movie.name }}</h2>
+               <p>{{ movie.synopsis }}</p>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>No data to display.</p>
+        {% endif %}
+        <a href="/create" class="btn">ajouter</a>
+    </div>
+{% endblock %}
